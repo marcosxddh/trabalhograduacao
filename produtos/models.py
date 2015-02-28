@@ -42,26 +42,21 @@ class Cidade(models.Model):
         return u'%s' % self.nome
 
 
-class Endereco(models.Model):
-    rua = models.CharField(max_length=100)
-    numero = models.CharField(max_length=10)
-    bairro = models.CharField(max_length=30)
-    cep = models.CharField(max_length=10)
-    regiao = models.ForeignKey(Regiao)
-    cidade = models.ForeignKey(Cidade)
-
-    def __unicode__(self):
-        return u'%s' % self.nome
-
-
 class Usuario(User):
     sexo = (('Masculino', 'Masculino'), ('Feminino', 'Feminino'))
-    endereco = models.ForeignKey(Endereco)
     telefone = models.CharField(max_length=15)
     celular = models.CharField(max_length=15)
     cpf = models.CharField(max_length=20)
     rg = models.CharField(max_length=12)
     sexo = models.CharField(choices=sexo, max_length=20)
+    data_nascimento = models.DateTimeField()
+    logradouro = models.CharField(max_length=100)
+    numero = models.CharField(max_length=10)
+    bairro = models.CharField(max_length=30)
+    complemento = models.CharField(max_length=30)
+    cep = models.CharField(max_length=10)
+    estado = models.ForeignKey(Regiao)
+    cidade = models.ForeignKey(Cidade)
 
     def __unicode__(self):
         return u'%s' % self.nome
@@ -70,6 +65,5 @@ class Usuario(User):
 admin.site.register(Produto)
 admin.site.register(Categoria)
 admin.site.register(Regiao)
-admin.site.register(Endereco)
 admin.site.register(Cidade)
 admin.site.register(Usuario)

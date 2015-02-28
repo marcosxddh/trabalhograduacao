@@ -19,11 +19,18 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ user }}<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{% url 'usuario:painel' %}">Painel do Usuário</a></li>
-                                <li><a href="#">Sair</a></li>
+                                <li><a href="{% url 'usuario:logout' %}">Sair</a></li>
                             </ul>
                         </li>
                         {% else %}
-                        <li><a href="">Criar Usuário</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Usuário<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Entrar</a></li>
+                                <li><a href="{% url 'usuario:criar_usario' %}">Cadastrar Usuário</a></li>
+                            </ul>
+                        </li>
+                        
                         {% endif %}
                     </ul>
                 </div>

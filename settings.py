@@ -26,6 +26,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_PROFILE_MODULE = 'usuario.Usuario'
 
 # Application definition
 
