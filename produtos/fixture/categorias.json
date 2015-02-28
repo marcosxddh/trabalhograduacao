@@ -1,0 +1,82 @@
+[
+  {
+    "model": "produtos.categoria",
+    "fields": {
+      "nome": "Animais e Acessórios",
+      "descricao": "Adicionar descrição para a categoria",
+      "valido": 1
+    }
+  },
+  {
+    "model": "produtos.categoria",
+    "fields": {
+      "nome": "Bebês e Crianças",
+      "descricao": "Adicionar descrição para a categoria",
+      "valido": 1
+    }
+  },
+  {
+    "model": "produtos.categoria",
+    "fields": {
+      "nome": "Músicas e Hobbies",
+      "descricao": "Adicionar descrição para a categoria",
+      "valido": 1
+    }
+  },
+  {
+    "model": "produtos.categoria",
+    "fields": {
+      "nome": "Moda e Beleza",
+      "descricao": "Adicionar descrição para a categoria",
+      "valido": 1
+    }
+  },
+  {
+    "model": "produtos.categoria",
+    "fields": {
+      "nome": "Para sua Casa",
+      "descricao": "Adicionar descrição para a categoria",
+      "valido": 1
+    }
+  },
+  {
+    "model": "produtos.categoria",
+    "fields": {
+      "nome": "Esportes",
+      "descricao": "Adicionar descrição para a categoria",
+      "valido": 1
+    }
+  },
+  {
+    "model": "produtos.categoria",
+    "fields": {
+      "nome": "Eletrônicos e Celulares",
+      "descricao": "Adicionar descrição para a categoria",
+      "valido": 1
+    }
+  },
+  {
+    "model": "produtos.categoria",
+    "fields": {
+      "nome": "Imóveis",
+      "descricao": "Adicionar descrição para a categoria",
+      "valido": 1
+    }
+  },
+  {
+    "model": "produtos.categoria",
+    "fields": {
+      "nome": "Empregos e Negócios",
+      "descricao": "Adicionar descrição para a categoria",
+      "valido": 1
+    }
+  },
+  {
+    "model": "produtos.categoria",
+    "fields": {
+      "nome": "Veículos e Barcos",
+      "descricao": "Adicionar descrição para a categoria",
+      "valido": 1
+    }
+  }
+]

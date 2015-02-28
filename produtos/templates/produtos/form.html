@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% block main %}
+<div class="col-md-12">
+    <p>.</p>
+    <p>.</p>
+</div>
+
+<div class="col-md-3 well">
+    <table class="table">
+        <thead>
+            <tr>
+                <th colspan="2" class="text-center">Produtos Cadastrados</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto in produtos %}
+            <tr>
+                <td width="70%">{{ produto.nome }}</td>
+                <td class="text-center">
+                    <a class="btn btn-xs btn-info" type="button" href="{% url 'produtos:editar_produto' produto.pk %}">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <button class="btn btn-xs btn-danger excluir" type="button" value="{{ produto.pk }}">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="col-md-9">
+    <div class="col-md-12">
+        {% bootstrap_messages %}
+    </div>
+    <h3>Cadastro e Edição de Produto</h3>
+    <form class="form" action="{{ request.path }}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="col-md-12">
+            {% bootstrap_field form.nome %}
+        </div>
+        <div class="col-md-4">
+            {% bootstrap_field form.marca %}
+        </div>
+        <div class="col-md-4">
+            {% bootstrap_field form.valor %}
+        </div>
+        <div class="col-md-4">
+            {% bootstrap_field form.categoria %}
+        </div>
+        <div class="col-md-12">
+            {% bootstrap_field form.foto  %}
+        </div>
+        <div class="col-md-12">
+            {% bootstrap_field form.descricao  %}
+        </div>
+        <div class="col-md-12">
+            <a type="button" href="{% url 'usuario:painel' %}" class="btn btn-default">Voltar</a>
+            <button type="submit" class="btn btn-success">Salvar</button>
+        </div>
+    </form>
+</div>
+<form class="form" action="{% url 'produtos:excluir_produto' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="produto_id" id="produto_id">
+    {% include 'modal_excluir.html' %}
+</form>
+<script type="text/javascript">
+$(document).ready(function (){
+    $('.excluir').click(function (){
+        $('#produto_id').val($(this).val());
+        $('#modal_excluir').modal('show');
+    });
+});
+</script>
+{% endblock %}

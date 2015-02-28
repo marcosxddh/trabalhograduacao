@@ -1,0 +1,21 @@
+<h3>Categorias</h3>
+<table class="table">
+    <thead>
+    </thead>
+    <tbody>
+        {% for categoria in categorias %}
+        <tr>
+            <td class="info"><span class="glyphicon glyphicon-record"></span></td>
+            <td class="info text-left">
+                <form class="form" action="{% url 'index' %}" method="post">
+                    {% csrf_token %}
+                    <input name="categoria_id" value="{{ categoria.pk }}" type="hidden">
+                    <button class="btn btn-sm btn-info" type="submit">{{ categoria.nome }}</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</script>

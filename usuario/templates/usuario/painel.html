@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% load static %}
+{% block main %}
+<p>.</p>
+<p>.</p>
+
+<div class="col-md-3 jumbotron">
+	<h2 class="text-center">Perfil - {{ user }}</h2>
+
+	<div class="thumbnail">
+		<img src="{% static 'us.jpg' %}" class="img-responsive" height="150" width="150">
+	</div>
+
+	<table class="table">
+		<thead>
+		</thead>
+		<tbody>
+			<tr>
+				<td><strong>Nome Anunciante: </strong>{{ user.first_name }} {{ user.last_name }}</td>
+			</tr>
+			<tr>
+				<td><strong>Quantidade Produtos: </strong>{{ total_produtos }}</td>
+			</tr>
+			<tr>
+				<td><strong>E-mail: </strong>{{ user.email }}</td>
+			</tr>
+		</tbody>
+	</table>
+	
+</div>
+<div class="col-md-9">
+	<div class="col-md-12">
+		{% bootstrap_messages %}
+	</div>
+	<h2 class="text-center">Produtos de {{ user.first_name }}<a class="btn btn-info pull-right" type="button" href="{% url 'produtos:criar_produto' %}">Adicionar novo produto</a></h2>
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th width="2" class="text-center">Ativo</th>
+				<th>Produto</th>
+				<th>Marca</th>
+				<th class="text-center">Categoria</th>
+				<th class="text-center">Valor R$</th>
+				<th class="text-center">Editar</th>
+				<th class="text-center">Excluir</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for produto in produtos %}
+			<tr>
+				<td class="text-center">
+					<input type="checkbox" disabled="disabled" class="input-control" {% if produto.valido %} checked="checked" {% endif %}>
+				</td>
+				<td>{{ produto.nome }}</td>
+				<td>{{ produto.marca }}</td>
+				<td class="text-center">{{ produto.categoria }}</td>
+				<td class="text-center">{{ produto.valor|floatformat:"2" }}</td>
+				<td class="text-center">
+					<form class="form" action="{% url 'produtos:editar_produto' produto.pk %}" method="get">
+						<button class="btn btn-sm btn-success" type="submit">
+							<span class="glyphicon glyphicon-pencil"></span>
+						</button>
+					</form>
+				</td>
+				<td class="text-center">
+					<button class="btn btn-sm btn-danger excluir" type="button">
+						<span class="glyphicon glyphicon-trash"></span>
+					</button>			
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+<form class="form" action="{% url 'produtos:excluir_produto' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="produto_id" id="produto_id">
+    {% include 'modal_excluir.html' %}
+</form>
+<script type="text/javascript">
+$(document).ready(function (){
+    $('.excluir').click(function (){
+        $('#produto_id').val($(this).val());
+        $('#modal_excluir').modal('show');
+    });
+});
+</script>
+{% endblock %}

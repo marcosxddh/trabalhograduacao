@@ -1,0 +1,191 @@
+[
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Acre",
+      "sigla": "AC"
+      }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Alagoas",
+      "sigla": "AL"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Amapá",
+      "sigla": "AP"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Amazonas",
+      "sigla": "AM"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Bahia",
+      "sigla": "BA"
+      }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Ceará",
+      "sigla": "CE"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Distrito Federal",
+      "sigla": "DF"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Espírito Santo",
+      "sigla": "ES"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Goiás",
+      "sigla": "GO"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Maranhão",
+      "sigla": "MA"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Mato Grosso",
+      "sigla": "MT"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Mato Grosso do Sul",
+      "sigla": "MS"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Minas Gerais",
+      "sigla": "MG"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Pará",
+      "sigla": "PA"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Paraíba",
+      "sigla": "PB"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Paraná",
+      "sigla": "PR"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Pernambuco",
+      "sigla": "PE"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Piauí",
+      "sigla": "PI"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Rio de Janeiro",
+      "sigla": "RJ"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Rio Grande do Norte",
+      "sigla": "RN"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Rio Grande do Sul",
+      "sigla": "RS"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Rondônia",
+      "sigla": "RO"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Roraima",
+      "sigla": "RR"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Santa Catarina",
+      "sigla": "SC"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "São Paulo",
+      "sigla": "SP"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Sergipe",
+      "sigla": "SE"
+    }
+  },
+  {
+    "model": "produtos.regiao",
+    "fields": {
+      "nome": "Tocantins",
+      "sigla": "TO"
+    }
+  }
+]

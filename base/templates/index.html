@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap3 %}
+{% block main %}
+<div class="col-md-12">
+    <p>.</p>
+    <p>.</p>
+</div>
+
+<div class="col-md-3 text-center well">
+    <form class="form form-inline" action="{{ request.path }}" method="get">
+        <h3>Selecione o Estado</h3>
+        <select class="form-control" name="estado">
+            {% for regiao in regioes %}
+                <option value="{{ regiao.sigla }}">{{ regiao.nome }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-ok"></span> OK</button>
+    </form>
+<hr>
+{% include 'produtos/_categorias.html' %}
+</div>
+<div class="col-md-9">
+    {% bootstrap_messages %}
+</div>
+<div clas="col-md-9">
+    {% for dado in dados %}
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <div class="well text-center">
+                    <img src="/static/{{ dado.foto }}" alt="{{ dado.produto.nome }}" height="150" width="150">
+                </div>
+                <div class="caption">
+                    <h3>{{ dado.produto.nome }} - {{ dado.produto.marca }}</h3>
+                    <p>{{ dado.produto.descricao }}</p>
+                    <p class="">
+                        <a href="{% url 'visualizar_produto' dado.produto.pk %}" class="btn btn-default" role="button">Visualizar</a>
+                        <a href="#" class="btn btn-primary" role="button">Comprar</a> 
+                    </p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

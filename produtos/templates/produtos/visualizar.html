@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap3 %}
+{% block main %}
+<p>.</p>
+<p>.</p>
+<div class="col-md-4">
+	<table class="table">
+		<thead>
+			<tr>
+				<h3 class="text-center">Dados do Anunciante</h3>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="info">
+				<td><strong>Nome: </strong></td>
+				<td>{{ produto.usuario.first_name }} {{ produto.usuario.last_name }}</td>
+			</tr>
+			<tr class="info">
+				<td><strong>E-mail: </strong></td>
+				<td>{{ produto.usuario.email }}</td>
+			</tr>
+			<tr class="info">
+				<td><strong>Telefone: </strong></td>
+				<td>Colocar campo telefone no model admin usuario</td>
+			</tr>
+			<tr class="info">
+				<td><strong>Endereço: </strong></td>
+				<td>Colocar campo endereço no model admin usuario</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="col-md-12 text-center">
+		<a href="{% url 'index' %}" class="btn btn-default" type="button">Voltar</a>
+		<button class="btn btn-success">Enviar SMS</button>
+		<button class="btn btn-info">Enviar E-mail</button>
+		<button class="btn btn-warning">Comprar</button>
+	</div>
+</div>
+<div class="col-md-8">
+	<table class="table">
+		<thead>
+			<tr>
+				<th colspan="3" class="text-center">
+					<div class="well">
+        				<img src="/static/{{ foto }}" alt="{{ produto.nome }}" height="300" width="300">
+    				</div>				
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><h3><strong>Produto: </strong>{{ produto.nome }}</h3></td>
+				<td><h3><strong>Marca: </strong>{{ produto.marca }}</h3></td>
+				<td><h3><strong>Valor: </strong>R$ {{ produto.valor }}</h3></td>
+			</tr>
+			<tr>
+				<td colspan="3"><h4><strong>Descrição: </strong>{{ produto.descricao }}</h4></td>
+				
+			</tr>
+		</tbody>
+	</table>
+</div>
+{% endblock %}
