@@ -2,5 +2,75 @@
 {% load static %}
 {% load bootstrap3 %}
 {% block main %}
-teste
+<p>.</p>
+<p>.</p>
+<div class="col-md-9">
+	<h3>Cadastro de Usuário</h3>
+	<legend>Login</legend>
+	<div class="col-md-4">
+		{% bootstrap_field form.username  %}
+	</div>
+	<div class="col-md-4">
+		{% bootstrap_field form.password  %}
+	</div>
+	<div class="col-md-4">
+		{% bootstrap_field form.email  %}
+	</div>
+
+	<legend>Dados do Usuário</legend>
+	<div class="col-md-4">
+		{% bootstrap_field form.first_name  %}
+	</div>
+	<div class="col-md-4">
+		{% bootstrap_field form.last_name  %}
+	</div>
+	<div class="col-md-4">
+		{% bootstrap_field form.data_nascimento  %}
+	</div>
+	<div class="col-md-2">
+		{% bootstrap_field form.sexo  %}
+	</div>
+	<div class="col-md-5">
+		{% bootstrap_field form.rg  %}
+	</div>
+	<div class="col-md-5">
+		{% bootstrap_field form.cpf  %}
+	</div>
+	<div class="col-md-4">
+		{% bootstrap_field form.telefone  %}
+	</div>
+	<div class="col-md-4">
+		{% bootstrap_field form.celular %}
+	</div>
+
+	<legend>Endereço</legend>
+	
+	<div class="col-md-4">
+		{% bootstrap_field form.cep %}
+	</div>
+	
+	<div class="col-md-6">
+		{% bootstrap_field form.logradouro %}
+	</div>
+	<div class="col-md-2">
+		{% bootstrap_field form.numero %}
+	</div>
+	<div class="col-md-4">
+		{% bootstrap_field form.complemento %}
+	</div>
+	<div class="col-md-4">
+		{% bootstrap_field form.bairro %}
+	</div>
+	<div class="col-md-4">
+		{% bootstrap_field form.estado %}
+	</div>
+	<div class="col-md-4">
+		{% bootstrap_field form.cidade %}
+	</div>
+	
+
+</div>
+<div class="col-md-3 well">
+	foto do usuario
+</div>
 {% endblock %}
